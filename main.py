@@ -15,6 +15,7 @@ engine = create_engine('mysql://root:@localhost:3306/pythondb')
 
 Base = declarative_base()
 
+
 class User(Base):
     __tablename__ = 'users'
 
@@ -25,7 +26,8 @@ class User(Base):
 
     def __str__(self):
         return f'{self.username}'
-    
+
+
 Session = sessionmaker(engine)
 session = Session()
 
