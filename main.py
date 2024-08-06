@@ -34,12 +34,17 @@ if __name__ == '__main__':
     Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
 
-    user1 = User(username='user1', email='user1@example.com')
-    user2 = User(username='user2', email='user2@example.com')
-    user3 = User(username='user3', email='user3@example.com')
+    user1 = User(username='Username1', email='user1@example.com')
+    user2 = User(username='Username2', email='user2@example.com')
+    user3 = User(username='Username3', email='user3@example.com')
 
     session.add(user1)
     session.add(user2)
     session.add(user3)
 
     session.commit()
+
+    # SELECT * FROM users;
+    users = session.query(User).all()
+    for user in users:
+        print(user)
