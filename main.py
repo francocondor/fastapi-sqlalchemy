@@ -50,6 +50,8 @@ if __name__ == '__main__':
     # Filter users id >= 2
     users = session.query(User).filter(
         User.id >= 2
+    ).filter(
+        User.username == 'Username2'
     )
 
     for user in users:
