@@ -1,6 +1,7 @@
 import datetime
 # from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, DateTime, Integer, String, create_engine
+from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 # mysql engine
@@ -44,13 +45,12 @@ if __name__ == '__main__':
 
     session.commit()
 
-    user = session.query(User).filter(
-        User.id == 2
-    ).first()
-    
-    if user:
-        print(user)
-    else:
-        print('User not found')
+    try:
+        user = session.query(User).filter(
+            User.id == 666
+        ).one()
+    except NoResultFound as e:
+        print(e)
+        user = None
     
 
