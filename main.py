@@ -7,12 +7,11 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 # mysql engine
 engine = create_engine('mysql://root:@localhost:3306/pythondb')
 
-try:
-    engine.connect()
-    print('Connection successful')
-
-except Exception as e:
-    print(e)
+# try:
+#     engine.connect()
+#     print('Connection successful')
+# except Exception as e:
+#     print(e)
 
 Base = declarative_base()
 
@@ -31,7 +30,7 @@ Session = sessionmaker(engine)
 session = Session()
 
 if __name__ == '__main__':
-    print('Creating table')
+    # print('Creating table')
     Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
 
