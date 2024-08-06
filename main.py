@@ -46,5 +46,11 @@ if __name__ == '__main__':
 
     # SELECT * FROM users;
     users = session.query(User).all()
+
+    # Filter users id >= 2
+    users = session.query(User).filter(
+        User.id >= 2
+    )
+
     for user in users:
         print(user)
