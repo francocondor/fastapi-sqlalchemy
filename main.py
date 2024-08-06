@@ -43,3 +43,6 @@ if __name__ == '__main__':
     session.add(user3)
 
     session.commit()
+
+    session.query(User).filter(User.id == 3).delete()
+    session.commit()
