@@ -43,14 +43,5 @@ if __name__ == '__main__':
     session.add(user3)
 
     session.commit()
-
-    try:
-        user = session.query(User).filter(
-            User.id == 1
-        ).one()
-        print(user)
-    except NoResultFound as e:
-        print(e)
-        user = None
     
-
+    
