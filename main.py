@@ -46,8 +46,9 @@ if __name__ == '__main__':
 
     try:
         user = session.query(User).filter(
-            User.id == 666
+            User.id == 1
         ).one()
+        print(user)
     except NoResultFound as e:
         print(e)
         user = None
