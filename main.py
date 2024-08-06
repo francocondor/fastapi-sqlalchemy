@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     session.commit()
 
-    user = session.query(User).filter_by(username='Username1').first()
+    user = session.query(User).filter(User.username=='Username1').first()
     print(user)
     
 
