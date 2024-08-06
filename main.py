@@ -43,16 +43,5 @@ if __name__ == '__main__':
     session.add(user3)
 
     session.commit()
-
-    # SELECT * FROM users;
-    users = session.query(User).all()
-
-    # Filter users id >= 2
-    users = session.query(User.id, User.username, User.email).filter(
-        User.id >= 2
-    ).filter(
-        User.username == 'Username2'
-    )
-
-    for user in users:
-        print(user)
+    
+    
