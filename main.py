@@ -48,7 +48,7 @@ if __name__ == '__main__':
     users = session.query(User).all()
 
     # Filter users id >= 2
-    users = session.query(User).filter(
+    users = session.query(User.id, User.username, User.email).filter(
         User.id >= 2
     ).filter(
         User.username == 'Username2'
