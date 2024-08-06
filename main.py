@@ -44,4 +44,10 @@ if __name__ == '__main__':
 
     session.commit()
     
-    
+    user = session.query(User).filter(User.id == 1).first()
+    user.username = 'Username1 Updated'
+    user.email = 'nuevouser3@example.com'
+
+    session.add(user)
+    session.commit()
+    print(user)
