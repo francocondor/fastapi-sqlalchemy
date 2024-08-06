@@ -50,4 +50,8 @@ if __name__ == '__main__':
 
     session.add(user)
     session.commit()
-    print(user)
+    
+    session.query(User).filter(
+        User.id == 2
+    ).update({'username': 'Username2 Updated', 'email': 'nuevouser2@example.com'})
+    session.commit()
