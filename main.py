@@ -47,6 +47,7 @@ if __name__ == '__main__':
     user = session.query(User).filter(
         User.id == 2
     ).first()
+    
     if user:
         print(user)
     else:
